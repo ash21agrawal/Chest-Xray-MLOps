@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chest X-Ray Classifier</title>
+</head>
+
+<body>
+
+    <h1>Chest X-Ray Classification</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <input
+            type="file"
+            name="image"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+            Predict
+        </button>
+
+    </form>
+
+    <br>
+
+    {% if prediction %}
+
+        <h2>
+            Prediction: {{ prediction }}
+        </h2>
+
+        <h3>
+            Confidence: {{ confidence }} %
+        </h3>
+
+    {% endif %}
+
+</body>
+</html>
