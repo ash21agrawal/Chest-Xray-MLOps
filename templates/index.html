@@ -102,11 +102,24 @@
                 <div class="card result-card bg-light p-3">
 
                     <h3>
-                        Prediction:
-                        <span class="text-primary">
-                            {{ prediction }}
-                        </span>
-                    </h3>
+Prediction:
+
+{% if prediction == "HEALTHY" %}
+<span class="text-success">{{ prediction }}</span>
+
+{% elif prediction == "PNEUMONIA" %}
+<span class="text-warning">{{ prediction }}</span>
+
+{% else %}
+<span class="text-danger">{{ prediction }}</span>
+<div class="alert alert-warning mt-4">
+<strong>Disclaimer:</strong>
+This application is intended for educational and research purposes only.
+It should not be used as a substitute for professional medical diagnosis.
+</div>
+{% endif %}
+
+</h3>
 
                     <h5>
                         Confidence:
@@ -137,7 +150,22 @@
     </div>
 
 </div>
+<footer class="text-center mt-5 mb-3 text-muted">
 
+<hr>
+
+<p>
+Powered by <strong>TensorFlow</strong> |
+<strong>Flask</strong> |
+<strong>Docker</strong> |
+<strong>AWS EC2</strong>
+</p>
+
+<p>
+© 2026 Ashvarya Agrawal
+</p>
+
+</footer>
 </body>
 
 </html>
