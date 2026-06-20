@@ -80,7 +80,7 @@ def home():
     return render_template(
         "index.html",
         prediction=prediction,
-        confidence=confidence
+        confidence=confidence,
         image_file=image_file
     )
 
