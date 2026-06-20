@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
@@ -43,6 +43,7 @@ def home():
 
     prediction = None
     confidence = None
+    image_file = None
 
     if request.method == "POST":
 
@@ -54,6 +55,7 @@ def home():
         )
 
         uploaded_file.save(filepath)
+        image_file = uploaded_file.filename
 
         processed_image = preprocess_image(
             filepath
@@ -79,6 +81,7 @@ def home():
         "index.html",
         prediction=prediction,
         confidence=confidence
+        image_file=image_file
     )
 
 
@@ -116,6 +119,12 @@ def predict_api():
         "confidence": confidence
     })
 
+@app.route("/uploads/<filename>")
+def uploaded_file(filename):
+    return send_from_directory(
+        "uploads",
+        filename
+    )
 
 if __name__ == "__main__":
     app.run(

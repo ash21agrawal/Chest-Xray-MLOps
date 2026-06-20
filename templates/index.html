@@ -99,6 +99,22 @@
 
                 {% if prediction %}
 
+                {% if image_file %}
+
+<div class="text-center mb-4">
+
+    <h5>Uploaded X-Ray Image</h5>
+
+    <img
+        src="/uploads/{{ image_file }}"
+        class="img-fluid rounded shadow"
+        style="max-height:400px;"
+    >
+
+</div>
+
+{% endif %}
+
                 <div class="card result-card bg-light p-3">
 
                     <h3>
