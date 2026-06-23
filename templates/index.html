@@ -118,40 +118,51 @@
                 <div class="card result-card bg-light p-3">
 
                     <h3>
-Prediction:
 
-{% if prediction == "HEALTHY" %}
-<span class="text-success">{{ prediction }}</span>
+    Prediction:
 
-{% elif prediction == "PNEUMONIA" %}
-<span class="text-warning">{{ prediction }}</span>
+    {% if prediction == "HEALTHY" %}
 
-{% else %}
-<span class="text-danger">{{ prediction }}</span>
-<div class="alert alert-warning mt-4">
-<strong>Disclaimer:</strong>
-This application is intended for educational and research purposes only.
-It should not be used as a substitute for professional medical diagnosis.
-</div>
-{% endif %}
+        <span class="text-success">{{ prediction }}</span>
+
+    {% elif prediction == "PNEUMONIA" %}
+
+        <span class="text-warning">{{ prediction }}</span>
+
+    {% else %}
+
+        <span class="text-danger">{{ prediction }}</span>
+
+    {% endif %}
 
 </h3>
 
-                    <h5>
-                        Confidence:
-                        {{ confidence }} %
-                    </h5>
+<h5>
+    Confidence:
+    {{ confidence }} %
+</h5>
 
-                    <div class="progress">
+<div class="progress">
 
-                        <div
-                            class="progress-bar"
-                            role="progressbar"
-                            style="width: {{ confidence }}%;">
+    <div
+        class="progress-bar"
+        role="progressbar"
+        style="width: {{ confidence }}%;">
 
-                            {{ confidence }} %
+        {{ confidence }} %
 
-                        </div>
+    </div>
+
+</div>
+
+<div class="alert alert-warning mt-4">
+
+    <strong>Disclaimer:</strong>
+
+    This application is intended for educational and research purposes only.
+    It should not be used as a substitute for professional medical diagnosis.
+
+</div>
 
                     </div>
 
