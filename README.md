@@ -184,7 +184,7 @@ This enables fully automated deployment from GitHub to AWS EC2.
 
 ### Prediction Result
 
-![Prediction Result](screenshots/prediction.png)
+![Prediction Result](screenshots/prediction-result.png)
 
 
 ### GitHub Actions CI/CD
