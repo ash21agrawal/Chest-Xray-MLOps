@@ -25,14 +25,13 @@ Classes:
 
 Dataset Distribution:
 
-| Class     | Images 
-
-| COVID-19  | 2202 
-| Pneumonia | 5526 
-| Healthy   | 3386 
+| Class | Images |
+|---------|---------:|
+| COVID-19 | 2202 |
+| Pneumonia | 5526 |
+| Healthy | 3386 |
 
 Total Images: 11,114
-
 
 ## Model Architecture
 
@@ -65,10 +64,10 @@ Model Accuracy: 91.10%
 
 ## Experimental Models Evaluated
 
-| Model                      | Accuracy 
-
-| Custom CNN                 | 91.10% 
-| ResNet50 Transfer Learning | 93.08% 
+| Model | Accuracy |
+|---------|---------:|
+| Custom CNN | 91.10% |
+| ResNet50 Transfer Learning | 93.08% |
 
 The deployed web application currently uses the Custom CNN model.
 
